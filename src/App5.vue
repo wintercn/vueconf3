@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <webgl :t="x/100"/>
-    <br/><!--<input type="range" max="10" min="0" v-model="x" />-->
-    <timer v-model="x"/>
+    <webgl :t="x"/>
+    <br/>
+    <input type="range" max="100" min="0" v-model="x" />
+    <!--<timer v-model="x"/>-->
   </div>
 </template>
 

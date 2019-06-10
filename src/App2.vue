@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <webgl :t="x/100"/>
-    <br/><!--<input type="range" max="10" min="0" v-model="x" />-->
-    <timer v-model="x"/>
+    <div style="margin:auto;width:100px;height:100px" v-bind:style="{ backgroundColor: `hsl(${Math.floor(t/10)%360}, 100%, 50%)` }"/>
+    <timer v-model="t" />
+
   </div>
 </template>
 
@@ -18,9 +18,7 @@ export default {
   },
   data: function () {
     return {
-      x: "0",
-      p1: {x:30, y:30},
-      p2: {x:150, y:150}
+      t: 0
     }
   }
 }

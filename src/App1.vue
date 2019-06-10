@@ -1,26 +1,27 @@
 <template>
   <div id="app">
-    <webgl :t="x/100"/>
-    <br/><!--<input type="range" max="10" min="0" v-model="x" />-->
-    <timer v-model="x"/>
+    <div style="margin:auto;width:100px;height:100px" 
+      v-bind:style="{ backgroundColor: `rgb(${r}, ${g}, ${b})` }"/>
+    <br/><input type="range" max="255" min="0" v-model="r" />
+    <br/><input type="range" max="255" min="0" v-model="g" />
+    <br/><input type="range" max="255" min="0" v-model="b" />
   </div>
 </template>
 
 <script>
 import webgl from './components/webgl-renderer.vue'
 import pointer from './components/pointer-input.vue'
-import timer from './components/timer.vue'
 
 export default {
   name: 'app',
   components: {
-    webgl, pointer, timer
+    webgl, pointer
   },
   data: function () {
     return {
-      x: "0",
-      p1: {x:30, y:30},
-      p2: {x:150, y:150}
+      r: 0,
+      g: 0,
+      b: 0
     }
   }
 }
